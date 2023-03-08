@@ -1,0 +1,88 @@
+/* Reset browser's default styling */
+*, *::after, *::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+/* ------------ */
+/* Global scope */
+/* ------------ */
+
+:root {
+	--color-light: rgb(229, 235, 234);
+	--color-dark: rgb(48, 52, 63);
+	--color-accent: rgb(252, 159, 91);
+	--font-main: 'Roboto', sans-serif;
+	--font-accent: 'Lobster', cursive;
+	--font-size-h1: 2rem;
+	--font-size-h2: 1.5rem;
+	--font-size-h3: 1.125rem;
+	--font-size-main: 1rem;
+	--font-size-small: 0.75rem;
+	--font-weight-thin: 100;
+	--font-weight-bold: 700;
+	--font-weight-main: 400;
+	--box-shadow: 0 0 3em rgba(0,0,0,.15);
+}
+
+body {
+	background-color: var(--color-light);
+	font-family: var(--font-main);
+	font-size: var(--font-size-main);
+	font-weight: var(--font-weight-main);
+	line-height: 1.5;
+	color: var(--color-dark);
+}
+
+/* END Global scope */
+
+/* ---------- */
+/* Typography */
+/* ---------- */
+
+h1 {
+	font-size: var(--font-size-h1);
+}
+
+h2 {
+	font-size: var(--font-size-h2);
+}
+
+h3 {
+	font-size: var(--font-size-h3);
+}
+
+h1, h2, h3, p {
+	padding: .25em 0;
+}
+
+.text-logo {
+	font-family: var(--font-accent);
+}
+
+.text-small {
+	font-size: var(--font-size-small);
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-justify {
+	text-align: justify;
+}
+
+.text-cursive {
+	font-style: italic;
+}
+
+.text-bold {
+	font-weight: var(--font-weight-bold);
+}
+
+.text-thin {
+	font-weight: var(--font-weight-thin);
+}
+
+/* END Typography */
