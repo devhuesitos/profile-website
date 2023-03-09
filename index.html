@@ -19,20 +19,34 @@
 </head>
 <body>
 	<header>
-		<h1 class="text-logo">DevHuesitos</h1>
-		<p class="text-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a lectus quis lectus porttitor condimentum. Quisque tincidunt ligula quis interdum blandit. Vestibulum ultrices felis non mattis eleifend.</p>
+		<div class="nav-wrapper">
+			<nav class="navbar">
+				<a href="#" class="text-logo">DevHuesitos</a>
+				
+				<button class="nav-toggle" aria-controls="navbar-items" aria-expanded="false">
+					<span class="sr-only">Menu</span>
+					<i class="nav-icon-open fa-solid fa-bars fa-xl" aria-hidden="true"></i>
+					<i class="nav-icon-close fa-solid fa-xmark fa-xl hidden" aria-hidden="true"></i>
+				</button>
+
+				<ul id="navbar-items" data-visible="false" class="navbar-items">
+					<li><a href="#" class="nav-item-link">Inicio</a></li>
+					<li><a href="#" class="nav-item-link">Portafolio</a></li>
+					<li><a href="#" class="nav-item-link">Contacto</a></li>
+				</ul>
+			</nav>
+		</div>
 	</header>
 
 	<main>
-		<h2>Integer sagittis</h2>
-
-		<p class="text-cursive text-justify">Praesent orci nunc, cursus dignissim magna non, dapibus finibus neque. In ut augue erat. Suspendisse finibus lectus et metus accumsan lacinia. Donec ac elementum ipsum. Donec accumsan at justo efficitur tempus. Aliquam bibendum ac tortor et rutrum. Sed malesuada tincidunt risus, eget semper nisl maximus a. Ut vitae varius est. Donec commodo magna auctor vulputate sodales.</p>
-
-		<p class="text-small">Praesent orci nunc, cursus dignissim magna non, dapibus finibus neque. In ut augue erat. Suspendisse finibus lectus et metus accumsan lacinia. Donec ac elementum ipsum. Donec accumsan at justo efficitur tempus. Aliquam bibendum ac tortor et rutrum. Sed malesuada tincidunt risus, eget semper nisl maximus a. Ut vitae varius est. Donec commodo magna auctor vulputate sodales.</p>
-
-		<h3>Nulla mattis</h3>
-
-		<p>Sed mattis facilisis nisl, non porta leo porttitor a. Suspendisse interdum, justo quis viverra gravida, nulla neque sodales mauris, sed ultricies nulla nisl vel tellus.</p>
+		<h1>¡Hola! Soy Huesitos</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dictum, sem id venenatis dapibus, nunc sapien commodo metus, nec egestas lorem magna ultricies ante.</p>
 	</main>
+
+	<footer>
+		<p class="text-small text-center text-light-color">Hecho con &#129505; por DevHuesitos, 2023. Todos los derechos reservados &copy;</p>
+	</footer>
+
+	<script src="js/scripts.js"></script>
 </body>
 </html>
