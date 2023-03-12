@@ -14,7 +14,7 @@
 	--color-dark: rgb(48, 52, 63);
 	--color-accent: rgb(252, 159, 91);
 	--color-alt: rgb(219, 50, 77);
-	--color-menu: rgba(48, 52, 63, .85);
+	--color-menu-items: transparent;
 	--font-main: 'Roboto', sans-serif;
 	--font-accent: 'Lobster', cursive;
 	--font-size-h1: 2.5rem;
@@ -29,7 +29,8 @@
 	--font-weight-thin: 100;
 	--font-weight-bold: 700;
 	--font-weight-main: 400;
-	--box-shadow: 0 0 5em rgba(0,0,0,.75);
+	--box-shadow: 0 0 2em rgba(0,0,0,.75);
+	--box-shadow-alt: 0 0 2em rgba(255, 255, 255, 0.75);
 	--transition: transform 350ms ease-in-out;
 }
 
@@ -185,7 +186,7 @@ h1, h2, h3, p {
 }
 
 .navbar-items {
-	background: var(--color-dark);
+	background: var(--color-menu-items);
 	list-style: none;
 	display: flex;
 	gap: 2rem;
@@ -209,6 +210,13 @@ h1, h2, h3, p {
 /* INTRO SECTION */
 /* ------------- */
 
+.section-intro-bg {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../media/intro-bg.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
 .section-intro-text {
 	display: flex;
 	flex-direction: column;
@@ -227,17 +235,18 @@ h1, h2, h3, p {
 	margin: auto;
 	padding: 1em 1.75em;
 	text-transform: uppercase;
-	background: none;
-	color: var(--color-accent);
+	background: var(--color-accent);
+	color: var(--color-dark);
 	font-size: var(--font-size-button);
 	border: 1px solid var(--color-accent);
 	cursor: pointer;
 	box-shadow: var(--box-shadow);
+
 }
 
 .button-primary:hover {
-	color: var(--color-alt);
-	border: 1px solid var(--color-alt);
+	background: none;
+	color: var(--color-accent);
 }
 
 /* -------------- */
@@ -256,6 +265,11 @@ footer {
 /* Smaller devices only */
 /* See NOTES (1) below  */
 @media (max-width: 640px) {
+
+	/* Global scope */
+	:root {
+		--color-menu-items: rgba(15, 15, 15, 0.95);
+	}
 
 	/* Menu styling */
 	.navbar-items {
