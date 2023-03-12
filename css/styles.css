@@ -167,9 +167,11 @@ h1, h2, h3, p {
 /* ---------- */
 
 .nav-wrapper {
-	width: 100%;
 	background: var(--color-dark);
 	padding: .25em 0;
+	position: fixed;
+	top: 0;
+	width: 100%;
 }
 
 .navbar {
@@ -215,6 +217,7 @@ h1, h2, h3, p {
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
+	padding-top: 5rem;
 }
 
 .section-intro-text {
@@ -362,6 +365,10 @@ footer {
 	}
 
 	/* Intro section */
+	.section-intro-bg {
+		padding-top: 7rem;
+	}
+
 	.profile-pic {
 		max-width: 450px;
 	}
