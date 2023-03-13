@@ -142,7 +142,7 @@ h1, h2, h3, p {
 	width: 80%;
 	margin: auto;
 	display: flex;
-	gap: 3em;
+	gap: 1em;
 }
 
 .container-flex-col {
@@ -252,6 +252,33 @@ h1, h2, h3, p {
 	color: var(--color-accent);
 }
 
+/* END INTRO SECTION */
+
+/* ---------------- */
+/* ABOUT ME SECTION */
+/* ---------------- */
+
+.portfolio-images {
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+	
+}
+
+.portfolio-images img {
+	border: 1px solid #ddd;
+	padding: 5px;
+	max-width: 100%;
+	margin: auto;
+	border-radius: 8px;
+}
+
+.portfolio-images img:hover {
+	box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.5);
+}
+
+/* END ABOUT ME SECTION */
+
 /* -------------- */
 /* FOOTER SECTION */
 /* -------------- */
@@ -260,6 +287,8 @@ footer {
 	background: var(--color-dark);
 	padding: .75em 0;
 }
+
+/* END FOOTER SECTION */
 
 /* ------------- */
 /* MEDIA QUERIES */
@@ -347,7 +376,7 @@ footer {
 	/* Typography */
 	:root {
 		--font-size-h1: 3.25rem;
-		--font-size-big: 1.75rem;
+		--font-size-big: 1.5rem;
 	}
 
 	/* General layout */
