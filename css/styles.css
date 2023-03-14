@@ -213,6 +213,8 @@ h1, h2, h3, p {
 /* ------------- */
 
 .section-intro-bg {
+	display: flex;
+	align-items: center;
 	background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../media/intro-bg.jpg');
 	background-position: center;
 	background-repeat: no-repeat;
@@ -374,6 +376,10 @@ footer {
 	}
 
 	/* Intro section */
+	.section-intro-bg {
+		height: 100vh;
+	}
+
 	.profile-pic {
 		max-width: 350px;
 	}
@@ -409,6 +415,7 @@ footer {
 	/* Intro section */
 	.section-intro-bg {
 		padding-top: 7rem;
+		height: 100vh;
 	}
 
 	.profile-pic {
