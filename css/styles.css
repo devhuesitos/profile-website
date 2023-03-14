@@ -244,7 +244,6 @@ h1, h2, h3, p {
 	border: 1px solid var(--color-accent);
 	cursor: pointer;
 	box-shadow: var(--box-shadow);
-
 }
 
 .button-primary:hover {
@@ -258,11 +257,15 @@ h1, h2, h3, p {
 /* ABOUT ME SECTION */
 /* ---------------- */
 
+.section-about {
+	flex-direction: column;
+	align-items: center;
+}
+
 .portfolio-images {
 	display: flex;
 	flex-direction: column;
 	gap: 1em;
-	
 }
 
 .portfolio-images img {
@@ -350,6 +353,11 @@ footer {
 	.profile-pic {
 		max-width: 250px;
 	}
+
+	/* About section */
+	.portfolio-images {
+		flex-direction: row;
+	}
 }
 
 /* Large devices (laptop/desktop) */
@@ -368,6 +376,11 @@ footer {
 	/* Intro section */
 	.profile-pic {
 		max-width: 350px;
+	}
+
+	/* About section */
+	.portfolio-images {
+		flex-direction: row;
 	}
 }
 
@@ -400,6 +413,17 @@ footer {
 
 	.profile-pic {
 		max-width: 450px;
+	}
+
+	/* About section */
+	.section-about {
+		width: 70%;
+		margin: auto;
+	}
+
+	.portfolio-images {
+		width: 80%;
+		flex-direction: row;
 	}
 }
 
