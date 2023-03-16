@@ -5,101 +5,80 @@
 	padding: 0;
 }
 
-/* ------------ */
+/* ============ */
 /* GLOBAL SCOPE */
-/* ------------ */
+/* ============ */
 
 :root {
-	--color-light: rgb(229, 235, 234);
-	--color-dark: rgb(48, 52, 63);
-	--color-accent: rgb(252, 159, 91);
-	--color-alt: rgb(219, 50, 77);
-	--color-menu-items: transparent;
+	/* COLORS */
+	--color-light: rgb(244, 244, 249);
+	--color-dark: rgb(7, 16, 19);
+	--color-primary: rgb(209, 96, 20);
+	--color-secondary: rgb(40, 175, 176);
+	--color-altern: rgb(153, 104, 136);
+	--color-gradient: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+
+	/* FONTS */
 	--font-main: 'Roboto', sans-serif;
-	--font-accent: 'Lobster', cursive;
-	--font-size-h1: 2.5rem;
-	--font-size-h2: 1.5rem;
-	--font-size-h3: 1.125rem;
-	--font-size-big: 1.25rem;
-	--font-size-main: 1rem;
-	--font-size-small: 0.75rem;
-	--font-size-menu: 1.125rem;
-	--font-size-button: .85rem;
-	--font-size-logo: 2rem;
-	--font-weight-thin: 100;
-	--font-weight-bold: 700;
-	--font-weight-main: 400;
-	--box-shadow: 0 0 2em rgba(0,0,0,.75);
-	--box-shadow-alt: 0 0 2em rgba(255, 255, 255, 0.75);
-	--transition: transform 350ms ease-in-out;
+	--font-accent: 'Lobster Two', cursive;
+
+	/* FONT SIZES */
+	--size-h1: 2.25rem;
+	--size-h2: 1.85rem;
+	--size-h3: 1.65rem;
+	--size-p: 1.15rem;
+	--size-logo: 2rem;
+	--size-big: 1.5rem;
+	--size-small: 0.85rem;
+
+	/* EFFECTS */
+	--box-shadow: 3px 5px 7px rgba(0,0,0,.25);
 }
 
 body {
-	background-color: var(--color-light);
-	font-family: var(--font-main);
-	font-size: var(--font-size-main);
-	font-weight: var(--font-weight-main);
-	line-height: 1.5;
+	background: var(--color-light);
 	color: var(--color-dark);
-	overflow-x: hidden;
+	font-family: var(--font-main);
+	line-height: 1.5;
 }
 
-/* END GLOBAL SCOPE */
-
-/* ------------ */
-/* ACCESIBILITY */
-/* ------------ */
-
-.sr-only {
-	position: absolute;
-	width: 1px;
-	height: 1px;
-	padding: 0;
-	margin: -1px;
-	overflow: hidden;
-	clip: rect(0, 0, 0, 0);
-	white-space: nowrap;
-	border-width: 0;
-}
-
-/* END ACCESIBILITY */
-
-/* ---------- */
+/* ========== */
 /* TYPOGRAPHY */
-/* ---------- */
+/* ========== */
 
 h1 {
-	font-size: var(--font-size-h1);
-	font-weight: var(--font-weight-bold);
+	font-family: var(--font-accent);
+	font-size: var(--size-h1);
 }
 
 h2 {
-	font-size: var(--font-size-h2);
+	font-size: var(--size-h2);
 }
 
 h3 {
-	font-size: var(--font-size-h3);
+	font-size: var(--size-h3);
 }
 
-h1, h2, h3, p {
-	padding: .25em 0;
+p {
+	font-size: var(--size-p);
 }
 
-.text-big {
-	font-size: var(--font-size-big);
-	line-height: 1.75;
+a {
+	color: var(--color-primary);
+	text-decoration: none;
+	cursor: pointer;
+}
+
+a:hover {
+	color: var(--color-secondary);
 }
 
 .text-small {
-	font-size: var(--font-size-small);
+	font-size: var(--size-small);
 }
 
-.text-center {
-	text-align: center;
-}
-
-.text-justify {
-	text-align: justify;
+.text-big {
+	font-size: var(--size-big);
 }
 
 .text-cursive {
@@ -107,345 +86,48 @@ h1, h2, h3, p {
 }
 
 .text-bold {
-	font-weight: var(--font-weight-bold);
+	font-weight: 900;
 }
 
 .text-thin {
-	font-weight: var(--font-weight-thin);
+	font-weight: 100;
 }
 
-.text-logo {
-	font-family: var(--font-accent);
-	font-size: var(--font-size-logo);
-	color: var(--color-light);
-	text-decoration: none;
-	cursor: pointer;
-}
-
-.text-light-color {
-	color: var(--color-light);
-}
-
-/* END TYPOGRAPHY */
-
-/* -------------- */
+/* ============== */
 /* GENERAL LAYOUT */
-/* -------------- */
+/* ============== */
 
-.container {
+section {
 	width: 100%;
 	margin: auto;
-	padding: 2rem 0;
+	padding: 2rem 1rem;
 }
 
-.container-flex {
-	width: 80%;
-	margin: auto;
-	display: flex;
-	gap: 1em;
-}
-
-.container-flex-col {
-	flex-direction: column;
-	align-items: center;
-	padding: 2em 0;
-}
-
-.container-dark {
-	background: var(--color-dark);
+section:nth-child(odd) {
+	background-color: var(--color-dark);
 	color: var(--color-light);
 }
 
-.hidden {
-	display: none;
-}
-
-/* END GENERAL LAYOUT */
-
-/* ---------- */
-/* NAVIGATION */
-/* ---------- */
-
-.nav-wrapper {
-	background: var(--color-dark);
-	padding: .25em 0;
-	position: fixed;
-	top: 0;
-	width: 100%;
-}
-
-.navbar {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	width: 90%;
-	max-width: 968px;
-	margin: auto;
-}
-
-.nav-toggle {
-	display: none;
-}
-
-.navbar-items {
-	background: var(--color-menu-items);
-	list-style: none;
-	display: flex;
-	gap: 2rem;
-}
-
-.nav-item-link {
-	font-size: var(--font-size-menu);
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	text-decoration: none;
+button {
+	background: var(--color-primary);
 	color: var(--color-light);
-}
-
-.nav-item-link:hover {
-	color: var(--color-accent);
-}
-
-/* END NAVIGATION */
-
-/* ------------- */
-/* INTRO SECTION */
-/* ------------- */
-
-.section-intro-bg {
-	display: flex;
-	align-items: center;
-	background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../media/intro-bg.jpg');
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	padding-top: 5rem;
-}
-
-.section-intro-text {
-	display: flex;
-	flex-direction: column;
-	gap: 2em;
-}
-
-.profile-pic {
-	max-width: 90%;
-	height: auto;
-	border-radius: 5px;
+	border: 1px solid var(--color-primary);
+	border-radius: 20px;
+	padding: .5em .75em;
 	box-shadow: var(--box-shadow);
 }
 
-.button-primary {
-	width: max-content;
-	margin: auto;
-	padding: 1em 1.75em;
-	text-transform: uppercase;
-	background: var(--color-accent);
-	color: var(--color-dark);
-	font-size: var(--font-size-button);
-	border: 1px solid var(--color-accent);
-	cursor: pointer;
-	box-shadow: var(--box-shadow);
+button:hover {
+	background: transparent;
+	color: var(--color-primary);
 }
 
-.button-primary:hover {
-	background: none;
-	color: var(--color-accent);
-}
+/* =============== */
+/* LANDING SECTION */
+/* =============== */
 
-/* END INTRO SECTION */
-
-/* ---------------- */
-/* ABOUT ME SECTION */
-/* ---------------- */
-
-.section-about {
-	flex-direction: column;
-	align-items: center;
-}
-
-.portfolio-images {
+.section-landing {
+	padding-top: 4rem;
 	display: flex;
 	flex-direction: column;
-	gap: 1em;
 }
-
-.portfolio-images img {
-	border: 1px solid #ddd;
-	padding: 5px;
-	max-width: 100%;
-	margin: auto;
-	border-radius: 8px;
-}
-
-.portfolio-images img:hover {
-	box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.5);
-}
-
-/* END ABOUT ME SECTION */
-
-/* -------------- */
-/* FOOTER SECTION */
-/* -------------- */
-
-footer {
-	background: var(--color-dark);
-	padding: .75em 0;
-}
-
-/* END FOOTER SECTION */
-
-/* ------------- */
-/* MEDIA QUERIES */
-/* ------------- */
-
-/* Smaller devices only */
-/* See NOTES (1) below  */
-@media (max-width: 640px) {
-
-	/* Global scope */
-	:root {
-		--color-menu-items: rgba(15, 15, 15, 0.95);
-	}
-
-	/* Menu styling */
-	.navbar-items {
-		flex-direction: column;
-		position: fixed;
-		z-index: 1000;
-		inset: 0 0 0 40%;
-		padding: min(30vh, 8rem) 2em;
-		transform: translateX(100%);
-		transition: var(--transition);
-	}
-
-	.navbar-items[data-visible="true"] {
-		transform: translateX(0%);
-	}
-
-	/* Menu icon position */
-	.nav-toggle {
-		display: block;
-		position: absolute;
-		z-index: 9999;
-		background: none;
-		color: var(--color-light);
-		cursor: pointer;
-		width: 1rem;
-		border: 0;
-		aspect-ratio: 1;
-		top: 1.15rem;
-		right: 2rem;
-	}
-
-	.nav-toggle:hover {
-		color: var(--color-accent);
-	}
-}
-
-/* Medium size devices (tablet) */
-@media (min-width: 800px) and (max-width: 1104px) {
-	/* General layout */
-	.container-flex-col {
-		flex-direction: row;
-		gap: 1.5em;
-	}
-
-	/* Intro section */
-	.profile-pic {
-		max-width: 250px;
-	}
-
-	/* About section */
-	.portfolio-images {
-		flex-direction: row;
-	}
-}
-
-/* Large devices (laptop/desktop) */
-@media (min-width: 1104px) and (max-width: 1440px) {
-	/* Typography */
-	:root {
-		--font-size-big: 1.5rem;
-	}
-
-	/* General layout */
-	.container-flex-col {
-		flex-direction: row;
-		gap: 2em;
-	}
-
-	/* Intro section */
-	.section-intro-bg {
-		height: 100vh;
-	}
-
-	.profile-pic {
-		max-width: 350px;
-	}
-
-	/* About section */
-	.portfolio-images {
-		flex-direction: row;
-	}
-}
-
-/* Largest devices (desktop and up) */
-@media (min-width: 1440px) {
-	/* Typography */
-	:root {
-		--font-size-h1: 3.25rem;
-		--font-size-big: 1.5rem;
-	}
-
-	/* General layout */
-	.container {
-		padding: 4rem 0;
-	}
-
-	.container-flex {
-		width: 70%;
-	}
-
-	.container-flex-col {
-		flex-direction: row;
-		gap: 4em;
-	}
-
-	/* Intro section */
-	.section-intro-bg {
-		padding-top: 7rem;
-		height: 100vh;
-	}
-
-	.profile-pic {
-		max-width: 450px;
-	}
-
-	/* About section */
-	.section-about {
-		width: 70%;
-		margin: auto;
-	}
-
-	.portfolio-images {
-		width: 80%;
-		flex-direction: row;
-	}
-}
-
-/* END MEDIA QUERIES */
-
-/* ===== */
-/* NOTES */
-/* ===== */
-	
-/* (1): Normally, one would start with */
-/* the mobile design and change it via */
-/* media queries on larger ones, but   */
-/* for the menu expected behaviour in  */
-/* specific, targeting smaller devices */
-/* on the media query makes it so less */
-/* code has to be rewritten, since the */
-/* desktop view (aka "larger devices") */
-/* is far less complex than mobile.    */
