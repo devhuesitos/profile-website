@@ -5,9 +5,17 @@
 	padding: 0;
 }
 
-/* ============ */
-/* GLOBAL SCOPE */
-/* ============ */
+::-moz-focus-inner {
+	border: 0;
+}
+
+/* +==============+ */
+/* |              | */
+/* |              | */
+/* | GLOBAL SCOPE | */
+/* |              | */
+/* |              | */
+/* +==============+ */
 
 :root {
 	/* COLORS */
@@ -16,7 +24,7 @@
 	--color-primary: rgb(209, 96, 20);
 	--color-secondary: rgb(40, 175, 176);
 	--color-altern: rgb(153, 104, 136);
-	--color-gradient: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+	--color-menu: rgba(7, 16, 19, .75);
 
 	/* FONTS */
 	--font-main: 'Roboto', sans-serif;
@@ -33,6 +41,7 @@
 
 	/* EFFECTS */
 	--box-shadow: 3px 5px 7px rgba(0,0,0,.25);
+	--transform: transform 350ms ease-in-out;
 }
 
 body {
@@ -42,9 +51,13 @@ body {
 	line-height: 1.5;
 }
 
-/* ========== */
-/* TYPOGRAPHY */
-/* ========== */
+/* +============+ */
+/* |            | */
+/* |            | */
+/* | TYPOGRAPHY | */
+/* |            | */
+/* |            | */
+/* +============+ */
 
 h1 {
 	font-family: var(--font-accent);
@@ -73,6 +86,18 @@ a:hover {
 	color: var(--color-secondary);
 }
 
+a:visited {
+	color: var(--color-primary);
+}
+
+a:focus {
+	outline: none;
+	box-shadow: 
+		0 0 0 6px var(--color-light),
+		0 0 0 8px var(--color-primary)
+	;
+}
+
 .text-small {
 	font-size: var(--size-small);
 }
@@ -93,9 +118,18 @@ a:hover {
 	font-weight: 100;
 }
 
-/* ============== */
-/* GENERAL LAYOUT */
-/* ============== */
+.text-logo {
+	font-family: var(--font-accent);
+	font-size: var(--size-logo);
+}
+
+/* +================+ */
+/* |                | */
+/* |                | */
+/* | GENERAL LAYOUT | */
+/* |                | */
+/* |                | */
+/* +================+ */
 
 section {
 	width: 100%;
@@ -103,12 +137,13 @@ section {
 	padding: 2rem 1rem;
 }
 
-section:nth-child(odd) {
-	background-color: var(--color-dark);
-	color: var(--color-light);
+.container {
+	width: 90%;
+	max-width: 1024px;
+	margin: auto;
 }
 
-button {
+.btn-primary {
 	background: var(--color-primary);
 	color: var(--color-light);
 	border: 1px solid var(--color-primary);
@@ -117,17 +152,180 @@ button {
 	box-shadow: var(--box-shadow);
 }
 
-button:hover {
+.btn-primary:hover {
 	background: transparent;
 	color: var(--color-primary);
 }
 
-/* =============== */
-/* LANDING SECTION */
-/* =============== */
+.btn-primary:focus {
+	outline: none;
+	box-shadow: 
+		0 0 0 6px var(--color-light),
+		0 0 0 8px var(--color-primary)
+	;
+}
+
+.btn-secondary {
+	background: var(--color-secondary);
+	color: var(--color-light);
+	border: 1px solid var(--color-secondary);
+	border-radius: 20px;
+	padding: .5em .75em;
+	box-shadow: var(--box-shadow);
+}
+
+.btn-secondary:hover {
+	background: transparent;
+	color: var(--color-secondary);
+}
+
+.btn-secondary:focus {
+	outline: none;
+	box-shadow: 
+		0 0 0 6px var(--color-light),
+		0 0 0 8px var(--color-secondary)
+	;
+}
+
+.hidden {
+	display: none;
+}
+
+/* Dark-mode on odd sections */
+section:nth-child(odd) {
+	background-color: var(--color-dark);
+	color: var(--color-light);
+}
+
+section:nth-child(odd) a:focus {
+	box-shadow: 
+		0 0 0 6px var(--color-dark),
+		0 0 0 8px var(--color-primary)
+	;
+}
+
+section:nth-child(odd) .btn-primary:focus {
+	box-shadow: 
+		0 0 0 6px var(--color-dark),
+		0 0 0 8px var(--color-primary)
+	;
+}
+
+section:nth-child(odd) .btn-secondary:focus {
+	box-shadow: 
+		0 0 0 6px var(--color-dark),
+		0 0 0 8px var(--color-secondary)
+	;
+}
+
+/* +============+ */
+/* |            | */
+/* |            | */
+/* | NAVIGATION | */
+/* |            | */
+/* |            | */
+/* +============+ */
+
+.navbar {
+	background: var(--color-menu);
+	color: var(--color-light);
+	position: fixed;
+	top: 0;
+	width: 100%;
+}
+
+.navbar-wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.navbar-items {
+	list-style: none;
+	display: flex;
+	gap: 2rem;
+}
+
+.navbar-items li a {
+	color: var(--color-light);
+	text-transform: uppercase;
+	letter-spacing: 4px;
+}
+
+.navbar-items li a:hover {
+	color: var(--color-primary);
+}
+
+.navbar-toggle {
+	display: none;
+}
+
+/* +=================+ */
+/* |                 | */
+/* |                 | */
+/* | LANDING SECTION | */
+/* |                 | */
+/* |                 | */
+/* +=================+ */
 
 .section-landing {
 	padding-top: 4rem;
 	display: flex;
 	flex-direction: column;
+}
+
+/* +===============+ */
+/* |               | */
+/* |               | */
+/* | MEDIA QUERIES | */
+/* |               | */
+/* |               | */
+/* +===============+ */
+
+/* Navigation for mobile devices */
+@media (max-width: 640px) {
+
+	.navbar-items {
+		background: var(--color-menu);
+		backdrop-filter: blur(8px);
+		flex-direction: column;
+		position: fixed;
+		z-index: 1000;
+		inset: 0 0 0 40%;
+		padding: min(30vh, 8rem) 2em;
+		transform: translateX(100%);
+		transition: var(--transform);
+	}
+
+	.navbar-items > li > a:focus {
+		box-shadow: 
+				0 0 0 6px var(--color-dark),
+				0 0 0 8px var(--color-primary)
+			;
+	}
+
+	.navbar-items[data-visible="true"] {
+		transform: translateX(0%);
+	}
+
+	.navbar-toggle {
+		display: block;
+		position: absolute;
+		z-index: 9999;
+		background: none;
+		border: none;
+		color: var(--color-light);
+		width: 1rem;
+		right: min(5vw, 1024px);
+		cursor: pointer;
+	}
+
+	.navbar-toggle:hover {
+		color: var(--color-primary);
+	}
+
+	.navbar-toggle:focus {
+		outline: 1px solid var(--color-light);
+		outline-offset: 6px;
+	}
 }
