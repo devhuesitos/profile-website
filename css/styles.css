@@ -24,14 +24,14 @@
 	--color-primary: rgb(209, 96, 20);
 	--color-secondary: rgb(40, 175, 176);
 	--color-altern: rgb(153, 104, 136);
-	--color-menu: rgba(7, 16, 19, .75);
+	--color-menu: rgba(7, 16, 19, .85);
 
 	/* FONTS */
 	--font-main: 'Roboto', sans-serif;
 	--font-accent: 'Lobster Two', cursive;
 
 	/* FONT SIZES */
-	--size-h1: 2.25rem;
+	--size-h1: 2.5rem;
 	--size-h2: 1.85rem;
 	--size-h3: 1.65rem;
 	--size-p: 1.15rem;
@@ -134,7 +134,7 @@ a:focus {
 section {
 	width: 100%;
 	margin: auto;
-	padding: 2rem 1rem;
+	padding: 4rem 1rem 2rem 1rem;
 }
 
 .container {
@@ -146,10 +146,12 @@ section {
 .btn-primary {
 	background: var(--color-primary);
 	color: var(--color-light);
+	text-transform: uppercase;
 	border: 1px solid var(--color-primary);
 	border-radius: 20px;
-	padding: .5em .75em;
+	padding: .75em 1.25em;
 	box-shadow: var(--box-shadow);
+	cursor: pointer;
 }
 
 .btn-primary:hover {
@@ -168,10 +170,12 @@ section {
 .btn-secondary {
 	background: var(--color-secondary);
 	color: var(--color-light);
+	text-transform: uppercase;
 	border: 1px solid var(--color-secondary);
 	border-radius: 20px;
-	padding: .5em .75em;
+	padding: .75em 1.25em;
 	box-shadow: var(--box-shadow);
+	cursor: pointer;
 }
 
 .btn-secondary:hover {
@@ -269,9 +273,26 @@ section:nth-child(odd) .btn-secondary:focus {
 /* +=================+ */
 
 .section-landing {
-	padding-top: 4rem;
 	display: flex;
 	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 2em;
+}
+
+.profile-picture {
+	width: 75%;
+	max-width: 300px;
+	height: auto;
+	border-radius: 12px;
+	box-shadow: var(--box-shadow);
+}
+
+.landing-text {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1.5em;
 }
 
 /* +===============+ */
@@ -282,8 +303,10 @@ section:nth-child(odd) .btn-secondary:focus {
 /* |               | */
 /* +===============+ */
 
+/* ============================= */
 /* Navigation for mobile devices */
-@media (max-width: 640px) {
+/* ============================= */
+@media (max-width: 1023px) {
 
 	.navbar-items {
 		background: var(--color-menu);
@@ -327,5 +350,27 @@ section:nth-child(odd) .btn-secondary:focus {
 	.navbar-toggle:focus {
 		outline: 1px solid var(--color-light);
 		outline-offset: 6px;
+	}
+}
+
+/* ============== */
+/* Tablet devices */
+/* ============== */
+@media (min-width: 850px) and (max-width: 1023px) {
+
+	/* SECTION: Landing */
+	.section-landing {
+		flex-direction: row;
+	}
+}
+
+/* ======================== */
+/* Laptop and small desktop */
+/* ======================== */
+@media (min-width: 1024px) {
+
+	/* SECTION: Landing */
+	.section-landing {
+		flex-direction: row;
 	}
 }
