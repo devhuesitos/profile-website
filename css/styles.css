@@ -31,13 +31,14 @@
 	--font-accent: 'Lobster Two', cursive;
 
 	/* FONT SIZES */
-	--size-h1: 2.5rem;
+	--size-h1: 2.75rem;
 	--size-h2: 1.85rem;
 	--size-h3: 1.65rem;
 	--size-p: 1.15rem;
 	--size-logo: 2rem;
 	--size-big: 1.5rem;
 	--size-small: 0.85rem;
+	--size-button: 1.15rem;
 
 	/* EFFECTS */
 	--box-shadow: 3px 5px 7px rgba(0,0,0,.25);
@@ -62,14 +63,17 @@ body {
 h1 {
 	font-family: var(--font-accent);
 	font-size: var(--size-h1);
+	text-align: center;
 }
 
 h2 {
 	font-size: var(--size-h2);
+	text-align: center;
 }
 
 h3 {
 	font-size: var(--size-h3);
+	text-align: center;
 }
 
 p {
@@ -134,7 +138,7 @@ a:focus {
 section {
 	width: 100%;
 	margin: auto;
-	padding: 4rem 1rem 2rem 1rem;
+	padding: 2rem 1rem;
 }
 
 .container {
@@ -146,6 +150,7 @@ section {
 .btn-primary {
 	background: var(--color-primary);
 	color: var(--color-light);
+	font-size: var(--size-button);
 	text-transform: uppercase;
 	border: 1px solid var(--color-primary);
 	border-radius: 20px;
@@ -170,6 +175,7 @@ section {
 .btn-secondary {
 	background: var(--color-secondary);
 	color: var(--color-light);
+	font-size: var(--size-button);
 	text-transform: uppercase;
 	border: 1px solid var(--color-secondary);
 	border-radius: 20px;
@@ -195,13 +201,14 @@ section {
 	display: none;
 }
 
-/* Dark-mode on odd sections */
+/* Dark-mode on odd sections and navbar links */
 section:nth-child(odd) {
 	background-color: var(--color-dark);
 	color: var(--color-light);
 }
 
-section:nth-child(odd) a:focus {
+section:nth-child(odd) a:focus,
+.menu-link:focus {
 	box-shadow: 
 		0 0 0 6px var(--color-dark),
 		0 0 0 8px var(--color-primary)
@@ -272,7 +279,21 @@ section:nth-child(odd) .btn-secondary:focus {
 /* |                 | */
 /* +=================+ */
 
+.section-landing-wrapper {
+	background: 
+		linear-gradient(
+			var(--color-menu), 
+			var(--color-menu)
+		),
+		url("../media/intro-bg.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
 .section-landing {
+	padding-top: 2rem;
+	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -353,13 +374,22 @@ section:nth-child(odd) .btn-secondary:focus {
 	}
 }
 
+/* ======================== */
+/* Phones and small devices */
+/* ======================== */
+@media (max-width: 767px) {
+	
+}
+
+
 /* ============== */
 /* Tablet devices */
 /* ============== */
-@media (min-width: 850px) and (max-width: 1023px) {
+@media (min-width: 768px) and (max-width: 1023px) {
 
 	/* SECTION: Landing */
 	.section-landing {
+		padding-top: 0;
 		flex-direction: row;
 	}
 }
@@ -367,10 +397,46 @@ section:nth-child(odd) .btn-secondary:focus {
 /* ======================== */
 /* Laptop and small desktop */
 /* ======================== */
-@media (min-width: 1024px) {
+@media (min-width: 1024px) and (max-width: 1439px) {
 
 	/* SECTION: Landing */
 	.section-landing {
 		flex-direction: row;
+	}
+}
+
+/* =============================== */
+/* Large desktop and other devices */
+/* =============================== */
+@media (min-width: 1440px) {
+
+	/* Global Scope */
+	:root {
+		--size-h1: 3.25rem;
+		--size-p: 1.5rem;
+		--size-button: 1.25rem;
+	}
+
+	/* General Layout */
+	.btn-primary {
+		border-radius: 36px;
+	}
+
+	.btn-secondary {
+		border-radius: 36px;
+	}
+
+	/* SECTION: Landing */
+	.section-landing {
+		flex-direction: row;
+		gap: 3em;
+	}
+
+	.profile-picture {
+		max-width: 450px;
+	}
+
+	.landing-text {
+		gap: 2.5em;
 	}
 }
